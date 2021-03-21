@@ -1,0 +1,107 @@
+@import "../../../scss/var/colors";
+@import "../../../scss/var/other";
+@import "../../../scss/helpers/mixins";
+
+.search-box {
+    transform: translateY(-$large);
+    margin-bottom: $large;
+    form {
+        box-shadow: 0 0 10px rgba($bg-dark-color, .2);
+        border-radius: 10px;
+        background: $white-color;
+
+        .search-box-location, .search-box-keyword {
+            border-right: 1px solid rgba($gray-color, .3);
+        }
+
+        .box {
+            height: 65px;
+            padding: 0  0 0 $medium;
+
+            label {
+                margin-bottom: 0;
+            }
+
+            input {
+                height: 100%;
+                border: none;
+                font-size: 1.1rem;
+                padding: 0;
+                padding-left: $small;
+                background: transparent;
+                
+
+                &::placeholder {
+                    text-transform: capitalize;
+                    font-size: .9rem;
+                    color: $gray-color;
+                }
+            }
+        }
+
+        .search-box-type {
+            padding-right: $medium;
+            .box {
+                margin-right: $medium;
+                
+                input {
+                    // display: none;
+                    appearance: none;
+                    padding: 0;
+                }
+
+                label {
+                    $size: 22px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.1rem;
+                    text-transform: capitalize;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: $size;
+                        height: $size;
+                        border: 2px solid $gray-color;
+                        border-radius: 0px;
+                        margin-right: $small;
+                    }
+
+                    &::after {
+                        $s: 10px;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: calc((#{$size} - #{$s}) / 2);
+                        width: $s;
+                        height: $s;
+                        background: $main-color;
+                        opacity: 0;
+                        transition: all .5s;
+                    }
+                }
+
+                input {
+
+                    &:checked ~ label {
+                        &::before {
+                            border-color: $main-color;
+                        }
+                        &::after {
+                            opacity: 1;
+                            transform: translateY(-50%) rotate(360deg);
+                        }
+                    }
+                }
+            }
+
+            button {
+                @include btn;
+            }
+        }
+
+    }
+}

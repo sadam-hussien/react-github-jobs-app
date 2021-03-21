@@ -1,0 +1,52 @@
+@import "../../../scss/var/other";
+@import "../../../scss/var/colors";
+
+
+.go-to-top-btn {
+    $size: 45px;
+    position: fixed;
+    bottom: $large * 5;
+    right: $large;
+    z-index: 9;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    overflow: hidden;
+    background: $main-color;
+    color: $white-color;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2px 2px 0;
+    box-shadow: 0 0 10px rgba($text-sub-color, .5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: $sub-color;
+        width: 40%;
+        transform: rotate(30deg) scaleY(2) translate(-$size);
+        transition: transform .3s;
+    }
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        bottom: $large;
+    }
+
+    &:hover {
+        &::after {
+            transform: rotate(30deg) scaleY(2) translate($size);
+        }
+    }
+
+
+}

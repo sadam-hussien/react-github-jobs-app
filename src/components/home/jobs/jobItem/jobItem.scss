@@ -1,0 +1,72 @@
+@import "../../../../scss/var/other";
+@import "../../../../scss/var/colors";
+
+.for-margin {
+    margin-bottom: $large + $medium;
+}
+.job-item {
+    $size: 55px;
+    padding: $medium + ($size / 2) $medium $medium;
+    box-shadow: 0 0 10px rgba($text-sub-color, .1);
+    background: $white-color;
+    position: relative;
+    border-radius: 5px;
+    border-left: 4px solid $sub-color;
+    transition: all .5s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba($text-sub-color, .3);
+        transform: scale(1.05);
+    }
+
+    .img {
+        width: $size;
+        height: $size;
+        padding: $small;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba($text-sub-color, .2);
+        position: absolute;
+        top: 0;
+        left: $medium;
+        transform: translateY(-50%);
+        background: $white-color;
+        border: 2px solid rgba($sub-color, .8);
+        img {
+            max-width: 40px;
+        }
+    }
+
+    .created-at {
+        color: $text-color;
+        margin-bottom: $small;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .title {
+        margin-bottom: $small;
+        .text {
+            line-height: 1.5rem;
+            color: $text-sub-color;
+        }
+    }
+
+    .name {
+        color: $text-color;
+        margin-bottom: $medium;
+    }
+
+    .location {
+        color: $main-color;
+        .text {
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.dark-theme {
+    body {
+        background: $bg-dark-color;
+    }
+
+    .search-box form {
+        background: $el-bg-dark-color;
+        // box-shadow: 0 0 10px rgba($white-color, .07);
+
+        .box input {
+            color: $white-color;
+        }
+
+        .search-box-type .box label {
+            color: $gray-color;
+        }
+    }
+
+    .job-item {
+        background: $el-bg-dark-color;
+
+        .created-at {
+            color: $gray-color;
+        }
+
+        .title .text {
+            color: $white-color;
+        }
+
+        .name {
+            color: $gray-color;
+        }
+    }
+
+    .details-page {
+
+        .details-item {
+
+            .details-header {
+                background: $el-bg-dark-color;
+                .company-name .company-name-text {
+                    color: $white-color;
+                }
+
+                .company-name a {
+                    color: $gray-color;
+                }
+            }
+
+            .details-body {
+                background: $el-bg-dark-color;
+
+                .top-details {
+                    .created {
+                        color: $gray-color;
+                    }
+
+                    .job-title {
+                        color: $white-color;
+                    }
+                }
+
+                .description-area pre {
+                    color: $gray-color;
+                }
+            }
+
+        }
+
+    }
+
+}

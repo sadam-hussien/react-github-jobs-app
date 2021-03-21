@@ -1,0 +1,160 @@
+@import "../../scss/var/colors";
+@import "../../scss/var/other";
+@import "../../scss/helpers/mixins";
+
+.details-page {
+    margin-bottom: $large;
+
+    .details-item {
+
+        // start details-header
+        .details-header {
+            transform: translateY(-$large);
+            background: $white-color;
+            border-radius: 0 5px 5px;
+            box-shadow: 0 0 10px rgba($text-sub-color, .2);
+            overflow: hidden;
+            height: 150px;
+
+            &.skeleton {
+                box-shadow: none;
+                background: none;
+            }
+
+            @media (max-width: 767px) {
+                padding: $medium;
+                height: auto;
+            }
+
+            img {
+                max-width: 150px;
+                height: 100%;
+                object-fit: cover;
+                margin-right: $large;
+            }
+
+            .company-name {
+                @media (max-width: 991px) {
+                    padding: $large;
+                }
+
+                @media (max-width: 767px) {
+                    padding: 0;
+                }
+                .company-name-text {
+                    margin-bottom: $small;
+                    color: $text-sub-color;
+                    font-weight: bold;
+                }
+                a {
+                    text-transform: capitalize;
+                    color: $text-color;
+                    font-size: .9rem;
+                }
+            }
+
+            .company-site {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                padding: $large;
+
+                @media (max-width: 767px) {
+                    padding: 0;
+                    margin-top: $medium;
+                }
+                a {
+                    @include btn;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+        // ==== end details-header
+
+        // SSTART details-body
+        .details-body {
+            padding: $large;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba($text-sub-color, .2);
+            background: $white-color;
+            margin-bottom: $large;
+
+            .top-details {
+                margin-bottom: $large;
+                .created {
+                    display: inline-block;
+                    color: $text-color;
+                    font-size: .9rem;
+                    margin-bottom: 5px;
+                }
+
+                .job-title {
+                    color: $text-sub-color;
+                    margin-bottom: 5px;
+                }
+
+                .location {
+                    color: $main-color;
+                }
+
+                .apply {
+                    @media (max-width: 767px) {
+                        margin-top: $medium;
+                    }
+                    a {
+                        @include btn;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+
+            }
+
+            .description-area {
+                pre {
+                    line-height: 1.7rem;
+                    white-space: pre-wrap;
+                    overflow: hidden;
+                    color: $text-color;
+                }
+            }
+
+            
+            &.skeleton {
+                padding: 0;
+                box-shadow: none;
+                background: none;
+            }
+
+        }
+        // -=== end details-body
+
+        // start details-footer
+        .details-footer {
+            position: relative;
+            .details-footer-content {
+                position: absolute;
+                padding: $large;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                .how-to-title {
+                    margin-bottom: $medium;
+                    color: $white-color;
+                }
+                pre {
+                    white-space: pre-wrap;
+                    line-height: 1.7rem;
+                    color: rgba($white-color, .8);
+
+                }
+            }
+        }
+        // ==== end details-footer
+
+    }
+
+}

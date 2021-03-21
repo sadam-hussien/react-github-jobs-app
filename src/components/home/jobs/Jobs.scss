@@ -1,0 +1,12 @@
+@import "../../../scss/var/other";
+@import "../../../scss/var/colors";
+@import "../../../scss/helpers/mixins";
+.jobs {
+    margin-bottom: $large;
+
+    .show-more-btn {
+        button {
+            @include btn;
+        }
+    }
+}

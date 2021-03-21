@@ -1,0 +1,23 @@
+body {
+    font-family: $main-font;
+    font-size: $main-font-size;
+    overflow-x: hidden;
+    background: $bg-color;
+    color: $text-sub-color;
+    
+}
+
+input, button, textarea, select {
+    &:focus {
+        outline: none;
+        border: none;
+        box-shadow: none !important;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
